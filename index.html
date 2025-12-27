@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>九州一日遊．終極深度攻略</title>
+    <title>九州一日遊．終極深度攻略 (含價格)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -16,6 +16,7 @@
         .badge-yellow { background-color: #fef9c3; color: #854d0e; } 
         .badge-red { background-color: #fee2e2; color: #991b1b; } 
         .badge-blue { background-color: #dbeafe; color: #1e40af; } 
+        .badge-price { background-color: #f3f4f6; color: #1f2937; border: 1px solid #d1d5db; font-family: 'Roboto', sans-serif; font-weight: 700; }
 
         /* 時間軸樣式 */
         .timeline-item { position: relative; padding-left: 1.5rem; border-left: 2px solid #e2e8f0; padding-bottom: 1.5rem; }
@@ -78,29 +79,29 @@
 <body class="text-slate-700 relative min-h-screen">
 
     <div class="bg-slate-900 text-white p-6 shadow-xl text-center sticky top-0 z-50">
-        <h1 class="text-xl md:text-2xl font-bold mb-1 tracking-wider"><i class="fas fa-map-marked-alt mr-2"></i>九州一日遊．終極深度攻略</h1>
-        <p class="text-slate-400 text-xs md:text-sm">不僅是比較，更是你的旅遊顧問</p>
+        <h1 class="text-xl md:text-2xl font-bold mb-1 tracking-wider"><i class="fas fa-map-marked-alt mr-2"></i>九州一日遊．價格攻略表</h1>
+        <p class="text-slate-400 text-xs md:text-sm">含預估費用、體力消耗與深度解析</p>
     </div>
 
     <div class="max-w-7xl mx-auto px-2 md:px-6 py-8 pb-24">
         
         <div class="bg-white p-4 rounded-lg shadow-sm mb-6 text-sm flex flex-wrap gap-4 items-center justify-center border border-gray-200">
             <span class="font-bold text-gray-900">快速指標：</span>
+            <span class="flex items-center"><i class="fas fa-tag text-slate-500 mr-1"></i> 價格</span>
             <span class="flex items-center"><i class="fas fa-star text-yellow-400 mr-1"></i> CP值</span>
             <span class="flex items-center"><i class="fas fa-shoe-prints text-yellow-500 mr-1"></i> 體力</span>
-            <span class="flex items-center"><i class="fas fa-utensils text-green-500 mr-1"></i> 餐食</span>
         </div>
 
         <div class="md:hidden space-y-4">
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m1')">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg text-teal-700">1. 經典網美線</h3>
-                        <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option A</span>
+                        <span class="badge badge-price">約 NT$ 2,300</span>
                     </div>
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs font-bold text-gray-400">4.9 (超值)</span>
+                    <div class="flex items-center mb-3 text-xs">
+                        <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="text-gray-400"> (CP值最高)</span>
                     </div>
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">✅ 含划船</span><span class="badge badge-yellow">⚡ 體力中</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
@@ -110,19 +111,19 @@
                 </div>
                 <div id="detail-m1" class="hidden bg-slate-50 p-4 border-t border-gray-100 text-sm">
                     <button onclick="openModal('A')" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold mb-3 shadow hover:bg-slate-700 transition"><i class="fas fa-book-open mr-2"></i>深度介紹 & 攻略</button>
-                    <a href="https://www.klook.com/zh-TW/activity/141664" target="_blank" class="block w-full text-center text-teal-600 border border-teal-600 py-2 rounded-lg font-bold hover:bg-teal-50">查看價格</a>
+                    <a href="https://www.klook.com/zh-TW/activity/141664" target="_blank" class="block w-full text-center text-teal-600 border border-teal-600 py-2 rounded-lg font-bold hover:bg-teal-50">查看即時價格</a>
                 </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m2')">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg text-pink-700">2. 划船美食線</h3>
-                        <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option B</span>
+                        <span class="badge badge-price">約 NT$ 4,200</span>
                     </div>
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <span class="text-xs font-bold text-gray-400">4.3 (奢華)</span>
+                    <div class="flex items-center mb-3 text-xs">
+                        <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i> 4.3</span>
+                        <span class="text-gray-400"> (豪華體驗)</span>
                     </div>
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">✅ 保證划船</span><span class="badge badge-green">🥩 高級牛</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
@@ -132,19 +133,19 @@
                 </div>
                 <div id="detail-m2" class="hidden bg-slate-50 p-4 border-t border-gray-100 text-sm">
                     <button onclick="openModal('B')" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold mb-3 shadow hover:bg-slate-700 transition"><i class="fas fa-book-open mr-2"></i>深度介紹 & 攻略</button>
-                    <a href="https://www.klook.com/zh-TW/activity/159252" target="_blank" class="block w-full text-center text-pink-600 border border-pink-600 py-2 rounded-lg font-bold hover:bg-pink-50">查看價格</a>
+                    <a href="https://www.klook.com/zh-TW/activity/159252" target="_blank" class="block w-full text-center text-pink-600 border border-pink-600 py-2 rounded-lg font-bold hover:bg-pink-50">查看即時價格</a>
                 </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m3')">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg text-indigo-700">3. 神話深度線</h3>
-                        <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option C</span>
+                        <span class="badge badge-price">約 NT$ 2,300</span>
                     </div>
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
-                        <span class="text-xs font-bold text-gray-400">3.8 (文化)</span>
+                    <div class="flex items-center mb-3 text-xs">
+                        <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i> 3.8</span>
+                        <span class="text-gray-400"> (文化深度)</span>
                     </div>
                     <div class="flex gap-2 mb-3"><span class="badge badge-red">❌ 無划船</span><span class="badge badge-green">🌿 體力輕</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
@@ -154,19 +155,19 @@
                 </div>
                 <div id="detail-m3" class="hidden bg-slate-50 p-4 border-t border-gray-100 text-sm">
                     <button onclick="openModal('C')" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold mb-3 shadow hover:bg-slate-700 transition"><i class="fas fa-book-open mr-2"></i>深度介紹 & 攻略</button>
-                    <a href="https://www.klook.com/zh-TW/activity/129204" target="_blank" class="block w-full text-center text-indigo-600 border border-indigo-600 py-2 rounded-lg font-bold hover:bg-indigo-50">查看價格</a>
+                    <a href="https://www.klook.com/zh-TW/activity/129204" target="_blank" class="block w-full text-center text-indigo-600 border border-indigo-600 py-2 rounded-lg font-bold hover:bg-indigo-50">查看即時價格</a>
                 </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m4')">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg text-yellow-700">4. 歷史名城線</h3>
-                        <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option D</span>
+                        <span class="badge badge-price">約 NT$ 2,700</span>
                     </div>
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <span class="text-xs font-bold text-gray-400">4.6 (充實)</span>
+                    <div class="flex items-center mb-3 text-xs">
+                        <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="text-gray-400"> (景點最多)</span>
                     </div>
                     <div class="flex gap-2 mb-3"><span class="badge badge-red">❌ 無划船</span><span class="badge badge-red">💦 體力累</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
@@ -176,19 +177,19 @@
                 </div>
                 <div id="detail-m4" class="hidden bg-slate-50 p-4 border-t border-gray-100 text-sm">
                     <button onclick="openModal('D')" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold mb-3 shadow hover:bg-slate-700 transition"><i class="fas fa-book-open mr-2"></i>深度介紹 & 攻略</button>
-                    <a href="https://www.klook.com/zh-TW/activity/119927" target="_blank" class="block w-full text-center text-yellow-600 border border-yellow-600 py-2 rounded-lg font-bold hover:bg-yellow-50">查看價格</a>
+                    <a href="https://www.klook.com/zh-TW/activity/119927" target="_blank" class="block w-full text-center text-yellow-600 border border-yellow-600 py-2 rounded-lg font-bold hover:bg-yellow-50">查看即時價格</a>
                 </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m5')">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg text-blue-700">5. 北九州海景線</h3>
-                        <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option E</span>
+                        <span class="badge badge-price">約 NT$ 2,200</span>
                     </div>
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                        <span class="text-xs font-bold text-gray-400">4.0 (海景)</span>
+                    <div class="flex items-center mb-3 text-xs">
+                        <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i> 4.0</span>
+                        <span class="text-gray-400"> (午餐自理)</span>
                     </div>
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">🌊 海景</span><span class="badge badge-red">🍣 自理</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
@@ -198,7 +199,7 @@
                 </div>
                 <div id="detail-m5" class="hidden bg-slate-50 p-4 border-t border-gray-100 text-sm">
                     <button onclick="openModal('E')" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold mb-3 shadow hover:bg-slate-700 transition"><i class="fas fa-book-open mr-2"></i>深度介紹 & 攻略</button>
-                    <a href="https://www.klook.com/zh-TW/activity/180212" target="_blank" class="block w-full text-center text-blue-600 border border-blue-600 py-2 rounded-lg font-bold hover:bg-blue-50">查看價格</a>
+                    <a href="https://www.klook.com/zh-TW/activity/180212" target="_blank" class="block w-full text-center text-blue-600 border border-blue-600 py-2 rounded-lg font-bold hover:bg-blue-50">查看即時價格</a>
                 </div>
             </div>
         </div>
@@ -208,19 +209,19 @@
                 <thead>
                     <tr class="bg-slate-100 text-slate-600 text-sm uppercase tracking-wider border-b border-gray-200">
                         <th class="p-4 w-1/12 text-center">代號</th>
+                        <th class="p-4 w-2/12">參考價格</th>
                         <th class="p-4 w-2/12">行程 & CP值</th>
                         <th class="p-4 w-3/12">重點景點</th>
-                        <th class="p-4 w-1/12 text-center">體力</th>
                         <th class="p-4 w-2/12">餐食</th>
-                        <th class="p-4 w-3/12 text-center">操作</th>
+                        <th class="p-4 w-2/12 text-center">操作</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
                     <tr class="detail-row hover:bg-teal-50 transition">
                         <td class="p-4 text-center font-bold text-teal-600 text-lg">A</td>
+                        <td class="p-4"><span class="badge badge-price text-lg">NT$ 2,300</span><div class="text-xs text-gray-400 mt-1">起</div></td>
                         <td class="p-4"><div class="font-bold">經典網美線</div><div class="text-yellow-500 text-xs mt-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td>
                         <td class="p-4">高千穗峽、上色見熊野座神社</td>
-                        <td class="p-4 text-center"><span class="badge badge-yellow">⚡ 中等</span></td>
                         <td class="p-4"><span class="badge badge-blue">✅ 含划船</span></td>
                         <td class="p-4 text-center">
                             <button onclick="openModal('A')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded shadow transition transform hover:-translate-y-0.5"><i class="fas fa-book-open mr-1"></i> 攻略</button>
@@ -228,9 +229,9 @@
                     </tr>
                     <tr class="detail-row hover:bg-pink-50 transition">
                         <td class="p-4 text-center font-bold text-pink-600 text-lg">B</td>
+                        <td class="p-4"><span class="badge badge-price text-lg">NT$ 4,200</span><div class="text-xs text-gray-400 mt-1">起</div></td>
                         <td class="p-4"><div class="font-bold">划船美食線</div><div class="text-yellow-500 text-xs mt-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></td>
                         <td class="p-4">高千穗峽、上色見、阿蘇牛</td>
-                        <td class="p-4 text-center"><span class="badge badge-yellow">⚡ 中等</span></td>
                         <td class="p-4"><span class="badge badge-green">🥩 高級牛</span></td>
                         <td class="p-4 text-center">
                             <button onclick="openModal('B')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded shadow transition transform hover:-translate-y-0.5"><i class="fas fa-book-open mr-1"></i> 攻略</button>
@@ -238,9 +239,9 @@
                     </tr>
                     <tr class="detail-row hover:bg-indigo-50 transition">
                         <td class="p-4 text-center font-bold text-indigo-600 text-lg">C</td>
+                        <td class="p-4"><span class="badge badge-price text-lg">NT$ 2,300</span><div class="text-xs text-gray-400 mt-1">起</div></td>
                         <td class="p-4"><div class="font-bold">神話深度線</div><div class="text-yellow-500 text-xs mt-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div></td>
                         <td class="p-4">天岩戶神社、高千穗峽(散步)</td>
-                        <td class="p-4 text-center"><span class="badge badge-green">🌿 輕鬆</span></td>
                         <td class="p-4"><span class="badge badge-red">❌ 無划船</span></td>
                         <td class="p-4 text-center">
                             <button onclick="openModal('C')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded shadow transition transform hover:-translate-y-0.5"><i class="fas fa-book-open mr-1"></i> 攻略</button>
@@ -248,9 +249,9 @@
                     </tr>
                     <tr class="detail-row hover:bg-yellow-50 transition">
                         <td class="p-4 text-center font-bold text-yellow-600 text-lg">D</td>
+                        <td class="p-4"><span class="badge badge-price text-lg">NT$ 2,700</span><div class="text-xs text-gray-400 mt-1">起</div></td>
                         <td class="p-4"><div class="font-bold">歷史名城線</div><div class="text-yellow-500 text-xs mt-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></td>
                         <td class="p-4">熊本城、阿蘇草千里</td>
-                        <td class="p-4 text-center"><span class="badge badge-red">💦 較累</span></td>
                         <td class="p-4"><span class="badge badge-red">❌ 無划船</span></td>
                         <td class="p-4 text-center">
                             <button onclick="openModal('D')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded shadow transition transform hover:-translate-y-0.5"><i class="fas fa-book-open mr-1"></i> 攻略</button>
@@ -258,9 +259,9 @@
                     </tr>
                     <tr class="detail-row hover:bg-blue-50 transition">
                         <td class="p-4 text-center font-bold text-blue-600 text-lg">E</td>
+                        <td class="p-4"><span class="badge badge-price text-lg">NT$ 2,200</span><div class="text-xs text-gray-400 mt-1">起</div></td>
                         <td class="p-4"><div class="font-bold">北九州海景線</div><div class="text-yellow-500 text-xs mt-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></td>
                         <td class="p-4">唐戶市場、元乃隅神社</td>
-                        <td class="p-4 text-center"><span class="badge badge-green">🌿 輕鬆</span></td>
                         <td class="p-4"><span class="badge badge-red">🍣 自理</span></td>
                         <td class="p-4 text-center">
                             <button onclick="openModal('E')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded shadow transition transform hover:-translate-y-0.5"><i class="fas fa-book-open mr-1"></i> 攻略</button>
@@ -269,6 +270,11 @@
                 </tbody>
             </table>
         </div>
+        
+        <div class="mt-6 text-center text-gray-400 text-xs">
+            * 價格為參考估算，實際金額隨匯率與季節浮動，請以訂購當下為準。
+        </div>
+
     </div>
 
     <div id="modal-A" class="modal closed fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-2 md:p-4 backdrop-blur-sm">
@@ -288,15 +294,16 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
-                        <div class="font-bold text-yellow-800 mb-1"><i class="fas fa-coins mr-1"></i> CP值分析：4.9/5</div>
-                        <p class="text-xs text-yellow-900 opacity-80">最合理的價格，一次解決兩個交通最困難、名氣最大的景點。午餐雖然普通，但重點在風景。</p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm">
-                        <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>行程豐富度最高，解決了自駕才能到的痛點。</p>
-                        <p><span class="text-red-600 font-bold">缺點：</span>神社階梯多(約260階)，下雨天會很滑。</p>
-                    </div>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                     <div class="text-center md:text-left">
+                        <div class="text-sm text-yellow-800 font-bold mb-1">預估費用</div>
+                        <div class="text-2xl font-bold text-gray-800">NT$ 2,300 <span class="text-xs font-normal text-gray-500">/人</span></div>
+                     </div>
+                     <div class="h-px w-full md:w-px md:h-12 bg-yellow-200"></div>
+                     <div class="text-sm text-yellow-900 flex-1">
+                        <strong>CP值：4.9/5</strong><br>
+                        這個價格包含了長時間的交通移動（單程3小時）與划船安排，比自己租車或轉車划算太多，是小資族首選。
+                     </div>
                 </div>
 
                 <div>
@@ -329,7 +336,6 @@
                     <h3 class="font-bold text-teal-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>達人私房攻略</h3>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-2"></i> <span><strong>划船技巧：</strong>瀑布水花很大，不想溼身請盡量靠右側划行。瀑布附近是最佳拍照點。</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-2"></i> <span><strong>尋找愛心：</strong>在高千穗峽散步道上，仔細看對岸岩壁，有一塊著名的「心形岩石」，據說看到會戀愛運上升。</span></li>
                         <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-2"></i> <span><strong>穿著建議：</strong>上色見神社雖然美，但其實是在爬山，絕對不要穿高跟鞋或難走的鞋子。</span></li>
                     </ul>
                 </div>
@@ -356,16 +362,17 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
-                        <div class="font-bold text-yellow-800 mb-1"><i class="fas fa-coins mr-1"></i> CP值分析：4.3/5</div>
-                        <p class="text-xs text-yellow-900 opacity-80">價格較高，但包含了「保證船票」這個隱形價值。如果你的旅行哲學是「難得來一次就要最好的」，那這就是你的CP值之王。</p>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                       <div class="text-sm text-yellow-800 font-bold mb-1">預估費用</div>
+                       <div class="text-2xl font-bold text-gray-800">NT$ 4,200 <span class="text-xs font-normal text-gray-500">/人</span></div>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm">
-                        <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>午餐品質大勝，且旺季不用擔心划不到船。</p>
-                        <p><span class="text-red-600 font-bold">缺點：</span>行程路線跟A完全一樣，如果對吃不講究，會覺得貴。</p>
+                    <div class="h-px w-full md:w-px md:h-12 bg-yellow-200"></div>
+                    <div class="text-sm text-yellow-900 flex-1">
+                       <strong>CP值：4.3/5</strong><br>
+                       價格雖然翻倍，但你買到的是「時間」與「味覺」。如果是帶重要的人（如父母或伴侶）去，這個價差是值得的。
                     </div>
-                </div>
+               </div>
 
                 <div>
                     <h3 class="font-bold text-lg text-slate-800 mb-4 border-l-4 border-pink-500 pl-3">🥩 關於那個牛肉 (Akaushi)</h3>
@@ -378,7 +385,6 @@
                     <h3 class="font-bold text-slate-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>達人私房攻略</h3>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-2"></i> <span><strong>保證入船的重要性：</strong>高千穗峽的船班非常少，自由行散客往往要早上7點去排隊抽整理券。參加這個團可以直接跳過這些焦慮，這是最大的價值。</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-2"></i> <span><strong>冰淇淋別錯過：</strong>在阿蘇草千里自由活動時，一定要買一支「阿蘇牛奶冰淇淋」，奶味重到像直接喝牛奶。</span></li>
                     </ul>
                 </div>
 
@@ -404,16 +410,17 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
-                        <div class="font-bold text-yellow-800 mb-1"><i class="fas fa-coins mr-1"></i> CP值分析：3.8/5</div>
-                        <p class="text-xs text-yellow-900 opacity-80">比較挑人的行程。省去了划船費和阿蘇交通費，換來的是獨特的文化體驗。如果你對「氣場」沒感覺，會覺得只是在看石頭。</p>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                       <div class="text-sm text-yellow-800 font-bold mb-1">預估費用</div>
+                       <div class="text-2xl font-bold text-gray-800">NT$ 2,300 <span class="text-xs font-normal text-gray-500">/人</span></div>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm">
-                        <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>步調最慢最輕鬆，不用一直趕車趕路，適合長輩或討厭人擠人的人。</p>
-                        <p><span class="text-red-600 font-bold">缺點：</span>無划船、無火山大景。</p>
+                    <div class="h-px w-full md:w-px md:h-12 bg-yellow-200"></div>
+                    <div class="text-sm text-yellow-900 flex-1">
+                       <strong>CP值：3.8/5</strong><br>
+                       價格與A團差不多，但少了「划船」這個大賣點。費用主要花在深入山區的交通成本上。是買一種「氛圍」。
                     </div>
-                </div>
+               </div>
 
                 <div>
                     <h3 class="font-bold text-lg text-slate-800 mb-4 border-l-4 border-indigo-500 pl-3">⛩️ 關於天安河原的傳說</h3>
@@ -426,7 +433,6 @@
                     <h3 class="font-bold text-slate-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>達人私房攻略</h3>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-start"><i class="fas fa-check text-indigo-500 mt-1 mr-2"></i> <span><strong>許願石塔：</strong>到了天安河原，記得自己也疊一個石塔許願。注意不要弄倒別人的，如果不小心弄倒了，要心懷歉意地幫忙疊回去。</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-indigo-500 mt-1 mr-2"></i> <span><strong>高千穗神社：</strong>這團會去高千穗神社本殿，記得去看那兩棵根部連在一起的「夫婦杉」，據說牽著手繞樹三圈，感情會變好。</span></li>
                     </ul>
                 </div>
 
@@ -452,16 +458,17 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
-                        <div class="font-bold text-yellow-800 mb-1"><i class="fas fa-coins mr-1"></i> CP值分析：4.6/5</div>
-                        <p class="text-xs text-yellow-900 opacity-80">以「景點門票總價」與「移動距離」來算，這團賺翻了。但以「體驗品質」來說，因為太趕，每個點都只能淺嚐即止。</p>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                       <div class="text-sm text-yellow-800 font-bold mb-1">預估費用</div>
+                       <div class="text-2xl font-bold text-gray-800">NT$ 2,700 <span class="text-xs font-normal text-gray-500">/人</span></div>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm">
-                        <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>效率極致，適合沒時間、想打卡、體力好的年輕人。</p>
-                        <p><span class="text-red-600 font-bold">缺點：</span>真的很累。熊本城園區非常大，走路要走很久。</p>
+                    <div class="h-px w-full md:w-px md:h-12 bg-yellow-200"></div>
+                    <div class="text-sm text-yellow-900 flex-1">
+                       <strong>CP值：4.6/5</strong><br>
+                       貴一點點，但這團包含了熊本城門票(通常約800日圓)和更長的交通距離。如果你的目標是「多去幾個地方」，這筆錢花得非常划算。
                     </div>
-                </div>
+               </div>
 
                 <div>
                     <h3 class="font-bold text-lg text-slate-800 mb-4 border-l-4 border-yellow-500 pl-3">🏯 熊本城現況 (必讀)</h3>
@@ -474,7 +481,6 @@
                     <h3 class="font-bold text-slate-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>達人私房攻略</h3>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-start"><i class="fas fa-check text-yellow-600 mt-1 mr-2"></i> <span><strong>天守閣攻略：</strong>如果時間不夠，建議直接搭電梯(或爬樓梯)衝頂樓看風景，再慢慢走下來看展覽，不然展覽太多會看不完。</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-yellow-600 mt-1 mr-2"></i> <span><strong>櫻之馬場 城彩苑：</strong>熊本城下的商店街。一定要買「海膽可樂餅」或「熊本熊人形燒」，好吃又好拍。</span></li>
                     </ul>
                 </div>
 
@@ -500,16 +506,17 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
-                        <div class="font-bold text-yellow-800 mb-1"><i class="fas fa-coins mr-1"></i> CP值分析：4.0/5</div>
-                        <p class="text-xs text-yellow-900 opacity-80">這是一個「看天吃飯」的行程。晴天時CP值破表，陰雨天會覺得很淒涼。且午餐自費，想吃好一點要多花錢。</p>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                       <div class="text-sm text-yellow-800 font-bold mb-1">預估費用</div>
+                       <div class="text-2xl font-bold text-gray-800">NT$ 2,200 <span class="text-xs font-normal text-gray-500">/人</span></div>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-sm">
-                        <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>視覺衝擊力最強（紅、藍、白），且可以自己選擇午餐預算。</p>
-                        <p><span class="text-red-600 font-bold">缺點：</span>如果不吃生魚片，唐戶市場樂趣減半。平日去市場很冷清。</p>
+                    <div class="h-px w-full md:w-px md:h-12 bg-yellow-200"></div>
+                    <div class="text-sm text-yellow-900 flex-1">
+                       <strong>CP值：4.0/5</strong><br>
+                       團費最便宜，但因為<strong>不含餐</strong>，你在唐戶市場吃多少壽司決定了最終花費。如果天氣好，風景無價；天氣不好，CP值會驟降。
                     </div>
-                </div>
+               </div>
 
                 <div>
                     <h3 class="font-bold text-lg text-slate-800 mb-4 border-l-4 border-blue-500 pl-3">🍣 唐戶市場生存法則</h3>
@@ -521,8 +528,7 @@
                 <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 shadow-sm">
                     <h3 class="font-bold text-slate-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>達人私房攻略</h3>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> <span><strong>拍照時機：</strong>元乃隅神社遊客非常多，想拍到「無人鳥居」很難。建議走到最下面的海邊岩石往上拍，或者在最高處的賽錢箱往下拍，避開人群。</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> <span><strong>河豚初體驗：</strong>這裡是日本河豚產地，市場裡有賣切得很薄的河豚生魚片盤，一盤約1000日圓，非常適合新手嚐鮮。</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-2"></i> <span><strong>拍照時機：</strong>元乃隅神社遊客非常多，想拍到「無人鳥居」很難。建議走到最下面的海邊岩石往上拍，避開人群。</span></li>
                     </ul>
                 </div>
 

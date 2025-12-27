@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>九州一日遊行程比較表 (進階詳細版)</title>
+    <title>九州一日遊行程比較表 (含CP值評比)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -17,6 +17,10 @@
         .badge-red { background-color: #fee2e2; color: #991b1b; } 
         .badge-blue { background-color: #dbeafe; color: #1e40af; } 
         
+        /* 星星顏色 */
+        .star-gold { color: #facc15; }
+        .star-gray { color: #e5e7eb; }
+
         /* 表格優化 */
         .detail-row td { vertical-align: top; padding-top: 1rem; padding-bottom: 1rem; }
         
@@ -49,7 +53,7 @@
             const modal = document.getElementById('modal-' + id);
             modal.classList.remove('closed');
             modal.classList.add('open');
-            document.body.style.overflow = 'hidden'; // 防止背景滾動
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal(id) {
@@ -59,7 +63,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // 點擊背景關閉
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('open');
@@ -73,24 +76,32 @@
 
     <div class="bg-slate-800 text-white p-6 shadow-lg text-center sticky top-0 z-50">
         <h1 class="text-xl md:text-2xl font-bold mb-1"><i class="fas fa-map-marked-alt mr-2"></i>九州一日遊．深度決策表</h1>
-        <p class="text-slate-300 text-xs md:text-sm">包含體力消耗、車程與詳細景點分析</p>
+        <p class="text-slate-300 text-xs md:text-sm">含 CP 值評比、體力消耗與詳細分析</p>
     </div>
 
     <div class="max-w-7xl mx-auto px-2 md:px-6 py-8 pb-20">
         
         <div class="bg-white p-4 rounded-lg shadow-sm mb-6 text-sm flex flex-wrap gap-4 items-center justify-center border border-gray-200">
             <span class="font-bold text-gray-900">指標說明：</span>
-            <span class="flex items-center"><i class="fas fa-shoe-prints text-yellow-500 mr-1"></i> 體力消耗</span>
-            <span class="flex items-center"><i class="fas fa-utensils text-green-500 mr-1"></i> 餐食內容</span>
+            <span class="flex items-center"><i class="fas fa-star text-yellow-400 mr-1"></i> CP值</span>
+            <span class="flex items-center"><i class="fas fa-shoe-prints text-yellow-500 mr-1"></i> 體力</span>
+            <span class="flex items-center"><i class="fas fa-utensils text-green-500 mr-1"></i> 餐食</span>
         </div>
 
         <div class="md:hidden space-y-4">
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m1')">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-1">
                         <h3 class="font-bold text-lg text-teal-700">1. 經典網美線</h3>
                         <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option A</span>
                     </div>
+                    <div class="flex items-center mb-3">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">4.9 / 5.0 (超值)</span>
+                    </div>
+                    
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">✅ 含划船</span><span class="badge badge-yellow">⚡ 體力中</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>CP值最高・標準玩法</span>
@@ -105,10 +116,17 @@
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m2')">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-1">
                         <h3 class="font-bold text-lg text-pink-700">2. 划船美食線</h3>
                         <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option B</span>
                     </div>
+                    <div class="flex items-center mb-3">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">4.3 / 5.0 (奢華)</span>
+                    </div>
+
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">✅ 保證划船</span><span class="badge badge-green">🥩 高級牛</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>吃貨首選・預算較高</span>
@@ -123,10 +141,17 @@
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m3')">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-1">
                         <h3 class="font-bold text-lg text-indigo-700">3. 神話深度線</h3>
                         <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option C</span>
                     </div>
+                     <div class="flex items-center mb-3">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">3.8 / 5.0 (小眾)</span>
+                    </div>
+
                     <div class="flex gap-2 mb-3"><span class="badge badge-red">❌ 無划船</span><span class="badge badge-green">🌿 體力輕</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>不去阿蘇・專注神話</span>
@@ -141,10 +166,17 @@
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m4')">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-1">
                         <h3 class="font-bold text-lg text-yellow-700">4. 歷史名城線</h3>
                         <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option D</span>
                     </div>
+                     <div class="flex items-center mb-3">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">4.6 / 5.0 (充實)</span>
+                    </div>
+
                     <div class="flex gap-2 mb-3"><span class="badge badge-red">❌ 無划船</span><span class="badge badge-red">💦 體力累</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>熊本城+阿蘇+高千穗</span>
@@ -159,10 +191,17 @@
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mobile-card border border-gray-100">
                 <div class="p-4 cursor-pointer" onclick="toggleDetail('m5')">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-1">
                         <h3 class="font-bold text-lg text-blue-700">5. 北九州海景線</h3>
                         <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded font-mono">Option E</span>
                     </div>
+                     <div class="flex items-center mb-3">
+                        <div class="text-yellow-400 text-sm mr-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">4.0 / 5.0 (看天)</span>
+                    </div>
+
                     <div class="flex gap-2 mb-3"><span class="badge badge-blue">🌊 海景</span><span class="badge badge-red">🍣 午餐自理</span></div>
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>唐戶市場+元乃隅神社</span>
@@ -181,7 +220,7 @@
                 <thead>
                     <tr class="bg-gray-100 text-gray-600 text-sm uppercase tracking-wider border-b border-gray-200">
                         <th class="p-4 w-1/12 text-center">代號</th>
-                        <th class="p-4 w-2/12">行程名稱</th>
+                        <th class="p-4 w-2/12">行程 & CP值</th>
                         <th class="p-4 w-3/12">重點景點</th>
                         <th class="p-4 w-1/12 text-center">體力</th>
                         <th class="p-4 w-2/12">餐食</th>
@@ -191,7 +230,13 @@
                 <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
                     <tr class="detail-row hover:bg-teal-50 transition">
                         <td class="p-4 text-center font-bold text-teal-600 text-lg">A</td>
-                        <td class="p-4 font-bold">經典網美線</td>
+                        <td class="p-4">
+                            <div class="font-bold">經典網美線</div>
+                            <div class="text-yellow-500 text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span class="text-gray-400 ml-1">4.9</span>
+                            </div>
+                        </td>
                         <td class="p-4">高千穗峽、上色見熊野座神社</td>
                         <td class="p-4 text-center"><span class="badge badge-yellow">⚡ 中等</span></td>
                         <td class="p-4"><span class="badge badge-blue">✅ 含划船</span></td>
@@ -202,7 +247,13 @@
                     </tr>
                     <tr class="detail-row hover:bg-pink-50 transition">
                         <td class="p-4 text-center font-bold text-pink-600 text-lg">B</td>
-                        <td class="p-4 font-bold">划船美食線</td>
+                        <td class="p-4">
+                            <div class="font-bold">划船美食線</div>
+                            <div class="text-yellow-500 text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-400 ml-1">4.3</span>
+                            </div>
+                        </td>
                         <td class="p-4">高千穗峽、上色見、阿蘇牛</td>
                         <td class="p-4 text-center"><span class="badge badge-yellow">⚡ 中等</span></td>
                         <td class="p-4"><span class="badge badge-green">🥩 高級牛</span></td>
@@ -213,7 +264,13 @@
                     </tr>
                     <tr class="detail-row hover:bg-indigo-50 transition">
                         <td class="p-4 text-center font-bold text-indigo-600 text-lg">C</td>
-                        <td class="p-4 font-bold">神話深度線</td>
+                        <td class="p-4">
+                            <div class="font-bold">神話深度線</div>
+                            <div class="text-yellow-500 text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                                <span class="text-gray-400 ml-1">3.8</span>
+                            </div>
+                        </td>
                         <td class="p-4">天岩戶神社、高千穗峽(散步)</td>
                         <td class="p-4 text-center"><span class="badge badge-green">🌿 輕鬆</span></td>
                         <td class="p-4"><span class="badge badge-red">❌ 無划船</span></td>
@@ -224,7 +281,13 @@
                     </tr>
                     <tr class="detail-row hover:bg-yellow-50 transition">
                         <td class="p-4 text-center font-bold text-yellow-600 text-lg">D</td>
-                        <td class="p-4 font-bold">歷史名城線</td>
+                        <td class="p-4">
+                            <div class="font-bold">歷史名城線</div>
+                            <div class="text-yellow-500 text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-400 ml-1">4.6</span>
+                            </div>
+                        </td>
                         <td class="p-4">熊本城、阿蘇草千里</td>
                         <td class="p-4 text-center"><span class="badge badge-red">💦 較累</span></td>
                         <td class="p-4"><span class="badge badge-red">❌ 無划船</span></td>
@@ -235,7 +298,13 @@
                     </tr>
                     <tr class="detail-row hover:bg-blue-50 transition">
                         <td class="p-4 text-center font-bold text-blue-600 text-lg">E</td>
-                        <td class="p-4 font-bold">北九州海景線</td>
+                        <td class="p-4">
+                            <div class="font-bold">北九州海景線</div>
+                            <div class="text-yellow-500 text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                <span class="text-gray-400 ml-1">4.0</span>
+                            </div>
+                        </td>
                         <td class="p-4">唐戶市場、元乃隅神社</td>
                         <td class="p-4 text-center"><span class="badge badge-green">🌿 輕鬆</span></td>
                         <td class="p-4"><span class="badge badge-red">🍣 自理</span></td>
@@ -252,32 +321,31 @@
     <div id="modal-A" class="modal closed fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="modal-content bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="bg-teal-600 text-white p-4 sticky top-0 flex justify-between items-center">
-                <h2 class="text-xl font-bold">A. 經典網美線 (Classic)</h2>
+                <h2 class="text-xl font-bold">A. 經典網美線</h2>
                 <button onclick="closeModal('A')" class="hover:text-gray-200"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-6 space-y-4">
+                <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center justify-between">
+                    <div class="font-bold text-yellow-800">CP值評分：4.9 <span class="text-xs font-normal">/ 5.0</span></div>
+                    <div class="text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <p class="text-sm text-gray-500">評價理由：價格合理，包含午餐與划船(或替代方案)，一次去到最遠且最紅的景點，效益最大化。</p>
+
                 <p class="text-gray-600 italic border-l-4 border-teal-500 pl-3">「一次集齊九州IG最紅的兩大打卡點，適合第一次來的你。」</p>
                 
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-2"><i class="fas fa-search text-teal-600 mr-1"></i> 行程特色解析</h3>
+                    <h3 class="font-bold text-gray-900 mb-2">📍 行程特色解析</h3>
                     <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                        <li><strong>高千穗峽：</strong>行程的重頭戲，會安排划船體驗（視當天水位），從船上看真名井瀑布非常震撼。</li>
-                        <li><strong>上色見熊野座神社：</strong>因為動畫《螢火蟲之森》而爆紅。這裡有長長的階梯穿過幽深森林，兩旁是長滿青苔的石燈籠，氛圍神祕空靈。</li>
-                        <li><strong>阿蘇草千里：</strong>一望無際的綠色大草原，背景是冒煙的阿蘇火山，視野極度開闊。</li>
+                        <li><strong>高千穗峽：</strong>行程的重頭戲，會安排划船體驗（視當天水位）。</li>
+                        <li><strong>上色見熊野座神社：</strong>動畫《螢火蟲之森》場景，神祕空靈。</li>
+                        <li><strong>阿蘇草千里：</strong>一望無際的綠色大草原與阿蘇火山。</li>
                     </ul>
                 </div>
 
                 <div class="bg-gray-50 p-4 rounded-lg text-sm">
                     <h4 class="font-bold mb-2">⚖️ 優缺點分析</h4>
                     <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>CP值最高，可以同時去到最遠的兩個景點。</p>
-                    <p><span class="text-red-600 font-bold">缺點：</span>上色見神社需要爬約 260 階樓梯，下雨天會比較泥濘難走。</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-gray-500 uppercase">推薦給：</span>
-                    <span class="badge badge-green">初訪九州</span>
-                    <span class="badge badge-green">愛拍照</span>
-                    <span class="badge badge-green">情侶/朋友</span>
+                    <p><span class="text-red-600 font-bold">缺點：</span>上色見神社需爬樓梯，下雨天泥濘。</p>
                 </div>
             </div>
         </div>
@@ -286,32 +354,25 @@
     <div id="modal-B" class="modal closed fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="modal-content bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="bg-pink-600 text-white p-4 sticky top-0 flex justify-between items-center">
-                <h2 class="text-xl font-bold">B. 划船美食線 (Luxury)</h2>
+                <h2 class="text-xl font-bold">B. 划船美食線</h2>
                 <button onclick="closeModal('B')" class="hover:text-gray-200"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-6 space-y-4">
+                 <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center justify-between">
+                    <div class="font-bold text-yellow-800">CP值評分：4.3 <span class="text-xs font-normal">/ 5.0</span></div>
+                    <div class="text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                </div>
+                <p class="text-sm text-gray-500">評價理由：單價較高，雖然體驗升級（和牛+保證船），但就「性價比」而言，是花錢買舒適與美食。</p>
+
                 <p class="text-gray-600 italic border-l-4 border-pink-500 pl-3">「不用擔心划船預約，午餐升級和牛，享受更尊榮的體驗。」</p>
                 
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-2"><i class="fas fa-search text-pink-600 mr-1"></i> 行程特色解析</h3>
+                    <h3 class="font-bold text-gray-900 mb-2">📍 行程特色解析</h3>
                     <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                        <li><strong>景點同A方案：</strong>一樣會去高千穗、上色見神社和阿蘇草千里。</li>
-                        <li><strong>保證划船：</strong>這方案最貴的原因通常是「保證有船」。旺季時散客很難搶到船票，跟這個團就不用擔心。</li>
-                        <li><strong>豪華午餐：</strong>從普通團餐升級為「赤牛(Akaushi)」或高千穗牛陶板燒，肉質鮮嫩。</li>
+                        <li><strong>景點同A方案：</strong>高千穗+上色見+阿蘇。</li>
+                        <li><strong>保證划船：</strong>旺季時不用早起排隊搶票。</li>
+                        <li><strong>豪華午餐：</strong>升級為「赤牛」或高千穗牛陶板燒。</li>
                     </ul>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-lg text-sm">
-                    <h4 class="font-bold mb-2">⚖️ 優缺點分析</h4>
-                    <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>吃得好、玩得好，不用早起搶船票。</p>
-                    <p><span class="text-red-600 font-bold">缺點：</span>團費較高，行程內容與A重複度高，只差在體驗升級。</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-gray-500 uppercase">推薦給：</span>
-                    <span class="badge badge-green">預算充足</span>
-                    <span class="badge badge-green">美食愛好者</span>
-                    <span class="badge badge-green">重視體驗</span>
                 </div>
             </div>
         </div>
@@ -320,32 +381,25 @@
     <div id="modal-C" class="modal closed fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="modal-content bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="bg-indigo-600 text-white p-4 sticky top-0 flex justify-between items-center">
-                <h2 class="text-xl font-bold">C. 神話深度線 (Cultural)</h2>
+                <h2 class="text-xl font-bold">C. 神話深度線</h2>
                 <button onclick="closeModal('C')" class="hover:text-gray-200"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-6 space-y-4">
+                 <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center justify-between">
+                    <div class="font-bold text-yellow-800">CP值評分：3.8 <span class="text-xs font-normal">/ 5.0</span></div>
+                    <div class="text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+                </div>
+                <p class="text-sm text-gray-500">評價理由：對於不愛神話的人來說略顯枯燥，且不含划船，午餐較普通，屬於小眾興趣導向。</p>
+
                 <p class="text-gray-600 italic border-l-4 border-indigo-500 pl-3">「捨棄阿蘇火山，深入日本神話發源地，感受滿滿的能量場。」</p>
                 
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-2"><i class="fas fa-search text-indigo-600 mr-1"></i> 行程特色解析</h3>
+                    <h3 class="font-bold text-gray-900 mb-2">📍 行程特色解析</h3>
                     <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                        <li><strong>天岩戶神社：</strong>日本神話中天照大神躲藏的地方，氣場非常莊嚴。</li>
-                        <li><strong>天安河原：</strong>這是一個巨大的洞穴神社，有無數遊客堆疊的小石塔，視覺衝擊力很強，被稱為強大的能量景點(Power Spot)。</li>
-                        <li><strong>高千穗深度遊：</strong>因為不去阿蘇，所以在高千穗地區停留時間最長，可以慢慢散步。</li>
+                        <li><strong>天岩戶神社：</strong>日本神話天照大神躲藏處。</li>
+                        <li><strong>天安河原：</strong>堆滿石塔的洞穴神社，強大的能量景點。</li>
+                        <li><strong>高千穗深度遊：</strong>停留時間最長，步調悠閒。</li>
                     </ul>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-lg text-sm">
-                    <h4 class="font-bold mb-2">⚖️ 優缺點分析</h4>
-                    <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>不用一直坐車趕場，步調較慢，適合喜歡人文歷史的人。</p>
-                    <p><span class="text-red-600 font-bold">缺點：</span>看不到阿蘇火山的壯闊景色，也沒有划船行程。</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-gray-500 uppercase">推薦給：</span>
-                    <span class="badge badge-green">二訪九州</span>
-                    <span class="badge badge-green">不喜歡爬山</span>
-                    <span class="badge badge-green">喜歡神祕氛圍</span>
                 </div>
             </div>
         </div>
@@ -354,32 +408,24 @@
     <div id="modal-D" class="modal closed fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="modal-content bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="bg-yellow-600 text-white p-4 sticky top-0 flex justify-between items-center">
-                <h2 class="text-xl font-bold">D. 歷史名城線 (History)</h2>
+                <h2 class="text-xl font-bold">D. 歷史名城線</h2>
                 <button onclick="closeModal('D')" class="hover:text-gray-200"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-6 space-y-4">
+                 <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center justify-between">
+                    <div class="font-bold text-yellow-800">CP值評分：4.6 <span class="text-xs font-normal">/ 5.0</span></div>
+                    <div class="text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                </div>
+                <p class="text-sm text-gray-500">評價理由：如果單以「去的景點數量」除以價格，這團CP值極高。但因為很趕，體驗深度會打折。</p>
+
                 <p class="text-gray-600 italic border-l-4 border-yellow-500 pl-3">「貪心旅人的首選！一天內硬塞入熊本城與高千穗，挑戰體力極限。」</p>
                 
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-2"><i class="fas fa-search text-yellow-600 mr-1"></i> 行程特色解析</h3>
+                    <h3 class="font-bold text-gray-900 mb-2">📍 行程特色解析</h3>
                     <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                        <li><strong>熊本城：</strong>日本三大名城之一，地震後修復的天守閣非常壯觀。</li>
-                        <li><strong>長途拉車：</strong>熊本城位於市區，而高千穗在深山，兩地距離其實很遠。</li>
-                        <li><strong>走馬看花：</strong>為了塞進這麼多大景點，每個點停留時間都被壓縮，比較像「打卡團」。</li>
+                        <li><strong>熊本城：</strong>日本三大名城之一，天守閣壯觀。</li>
+                        <li><strong>走馬看花：</strong>為了塞進多個大點，每個點停留時間較短。</li>
                     </ul>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-lg text-sm">
-                    <h4 class="font-bold mb-2">⚖️ 優缺點分析</h4>
-                    <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>效率極高，一天解決兩個需要分兩天跑的行程。</p>
-                    <p><span class="text-red-600 font-bold">缺點：</span>非常累！熊本城園區很大要一直走，且無法好好享受高千穗的清幽。</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-gray-500 uppercase">推薦給：</span>
-                    <span class="badge badge-green">體力好</span>
-                    <span class="badge badge-green">收集景點狂</span>
-                    <span class="badge badge-green">時間有限</span>
                 </div>
             </div>
         </div>
@@ -388,32 +434,25 @@
     <div id="modal-E" class="modal closed fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="modal-content bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             <div class="bg-blue-600 text-white p-4 sticky top-0 flex justify-between items-center">
-                <h2 class="text-xl font-bold">E. 北九州海景線 (Seaside)</h2>
+                <h2 class="text-xl font-bold">E. 北九州海景線</h2>
                 <button onclick="closeModal('E')" class="hover:text-gray-200"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-6 space-y-4">
+                 <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg flex items-center justify-between">
+                    <div class="font-bold text-yellow-800">CP值評分：4.0 <span class="text-xs font-normal">/ 5.0</span></div>
+                    <div class="text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                </div>
+                <p class="text-sm text-gray-500">評價理由：景色無敵，但午餐需自費，且非常吃天氣。如果是陰天去，CP值會瞬間暴跌。</p>
+
                 <p class="text-gray-600 italic border-l-4 border-blue-500 pl-3">「完全不同方向！往北走的看海行程，壽司與絕美海中鳥居。」</p>
                 
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-2"><i class="fas fa-search text-blue-600 mr-1"></i> 行程特色解析</h3>
+                    <h3 class="font-bold text-gray-900 mb-2">📍 行程特色解析</h3>
                     <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                        <li><strong>唐戶市場：</strong>這裡不是普通市場，週五六日會變成「壽司大戰」，幾十家攤位賣新鮮握壽司，買了直接在海邊吃。</li>
-                        <li><strong>角島大橋：</strong>日劇廣告常出現的場景，筆直的大橋延伸入碧藍大海，非常美。</li>
-                        <li><strong>元乃隅神社：</strong>被CNN評選為日本最美31景之一，123座紅色鳥居沿著懸崖排列，與藍色大海形成強烈對比。</li>
+                        <li><strong>唐戶市場：</strong>週末限定壽司市集，海鮮控天堂。</li>
+                        <li><strong>角島大橋：</strong>日劇絕美場景，筆直大橋入海。</li>
+                        <li><strong>元乃隅神社：</strong>123座紅色鳥居與藍海對比。</li>
                     </ul>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-lg text-sm">
-                    <h4 class="font-bold mb-2">⚖️ 優缺點分析</h4>
-                    <p class="mb-1"><span class="text-green-600 font-bold">優點：</span>風景顏色最鮮豔（紅鳥居、藍海、白橋），拍照極美，且可以吃爆海鮮。</p>
-                    <p><span class="text-red-600 font-bold">缺點：</span>如果不吃生食會很痛苦。且平日去市場很無聊，務必選週末。</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-gray-500 uppercase">推薦給：</span>
-                    <span class="badge badge-green">海鮮控</span>
-                    <span class="badge badge-green">喜歡海景</span>
-                    <span class="badge badge-green">週末出發</span>
                 </div>
             </div>
         </div>
